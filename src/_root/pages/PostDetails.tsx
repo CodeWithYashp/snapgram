@@ -17,7 +17,7 @@ const PostDetails = () => {
   const { user } = useUserContext();
 
   const { data: post, isLoading } = useGetPostById(id || "");
-  const { data: userPosts, isLoading: isUserPostLoading } = useGetUserPosts(
+  const { data: userPosts, isPending: isUserPostLoading } = useGetUserPosts(
     post?.creator.$id
   );
   const { mutate: deletePost } = useDeletePost();
@@ -105,7 +105,7 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`ost_details-delete_btn ${
+                  className={` px-4 py-2 rounded-md hover:bg-slate-100 post_details-delete_btn ${
                     user.id !== post?.creator.$id && "hidden"
                   }`}
                 >
