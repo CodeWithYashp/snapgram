@@ -269,8 +269,8 @@ export async function updatePost(post: IUpdatePost) {
   const hasFileToUpdate = post.file.length > 0;
   try {
     let image = {
-      imageUrl: post.imageUrl,
-      imageId: post.imageId,
+      imageUrl: post?.imageUrl,
+      imageId: post?.imageId,
     };
 
     if (hasFileToUpdate) {
@@ -299,7 +299,7 @@ export async function updatePost(post: IUpdatePost) {
       post.postId,
       {
         caption: post.caption,
-        imageUrl: image.imageUrl,
+        imageUrl: image?.imageUrl,
         imageId: image.imageId,
         location: post.location,
         tags: tags,
@@ -437,8 +437,8 @@ export async function updateUser(user: IUpdateUser) {
   const hasFileToUpdate = user.file.length > 0;
   try {
     let image = {
-      imageUrl: user.imageUrl,
-      imageId: user.imageId,
+      imageUrl: user?.imageUrl,
+      imageId: user?.imageId,
     };
 
     if (hasFileToUpdate) {
@@ -464,8 +464,8 @@ export async function updateUser(user: IUpdateUser) {
       {
         name: user.name,
         bio: user.bio,
-        imageUrl: image.imageUrl,
-        imageId: image.imageId,
+        imageUrl: image?.imageUrl,
+        imageId: image?.imageId,
       }
     );
 

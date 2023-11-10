@@ -60,8 +60,8 @@ const UpdateProfile = () => {
       name: value.name,
       bio: value.bio,
       file: value.file,
-      imageUrl: currentUser.imageUrl,
-      imageId: currentUser.imageId,
+      imageUrl: currentUser?.imageUrl,
+      imageId: currentUser?.imageId,
     });
 
     if (!updatedUser) {
@@ -106,7 +106,7 @@ const UpdateProfile = () => {
                   <FormControl>
                     <ProfileUploader
                       fieldChange={field.onChange}
-                      mediaUrl={currentUser.imageUrl}
+                      mediaUrl={currentUser?.imageUrl}
                     />
                   </FormControl>
                   <FormMessage className="shad-form_message" />
